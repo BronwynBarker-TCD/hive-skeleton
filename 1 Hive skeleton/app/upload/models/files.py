@@ -1,6 +1,7 @@
+import datetime
 from flask import Markup, url_for
-from flask_appbuilder.models.mixins import AuditMixin, FileColumn
-from sqlalchemy import Table, Column, Integer, String, Boolean, ForeignKey
+from flask_appbuilder.models.mixins import AuditMixin, FileColumn, DateTime
+from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.orm import relationship
 from flask_appbuilder import Model
 from flask_appbuilder.filemanager import get_file_original_name
@@ -16,12 +17,14 @@ class Project(AuditMixin, Model):
     name = Column(String(150), unique=True, nullable=False)
 
 
-class ProjectFiles(Model):
+class ProjectFiles(AuditMixin,Model):
     __tablename__ = "project_files"
     id = Column(Integer, primary_key=True)
     project_id = Column(Integer, ForeignKey('project.id'))
     project = relationship("Project")
+    #user_name = Column(Integer, ForeignKey('ab_user.id'), default=id, nullable=True)
     file = Column(FileColumn, nullable=False)
+    #date_upload = Column(DateTime, default=datetime.datetime.utcnow, nullable=False)
     description = Column(String(150))
 
     def download(self):
@@ -30,3 +33,4 @@ class ProjectFiles(Model):
 
     def file_name(self):
         return get_file_original_name(str(self.file))
+        

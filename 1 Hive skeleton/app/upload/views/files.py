@@ -12,11 +12,11 @@ from app import appbuilder, db
 class ProjectFilesModelView(ModelView):
     datamodel = SQLAInterface(ProjectFiles)
 
-    label_columns = {'file_name': 'File Name', 'download': 'Download'}
-    add_columns = ['file', 'description']
-    edit_columns = ['file', 'description']
-    list_columns = ['file_name', 'download']
-    show_columns = ['file_name', 'download']
+    label_columns = {'created_on': 'Date Upload', 'file_name': 'File Name', 'download': 'Download', 'created_by': 'User'}
+    add_columns = ['file','description']
+    edit_columns = ['file','description']
+    list_columns = ['file_name','created_by','created_on', 'download']
+    show_columns = ['file_name','created_by','created_on', 'download']
 
 
 class ProjectModelView(CompactCRUDMixin, ModelView):

@@ -20,7 +20,7 @@ CSRF_ENABLED = True
 APP_NAME = "HIVE"
 
 # Uncomment to setup Setup an App icon
-APP_ICON = "static/img/icon.png"
+APP_ICON = "static/img/web.png"
 APP_ICON_WIDTH = 290
 
 #----------------------------------------------------
