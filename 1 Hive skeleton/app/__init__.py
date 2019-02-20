@@ -52,4 +52,4 @@ appbuilder = AppBuilder(
 
 #IMPORT ADDITIONAL MODULES HERE!#
 from app import upload
-#from app import merge
+from app import merge
