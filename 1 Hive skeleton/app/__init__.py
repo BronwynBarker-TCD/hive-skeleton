@@ -51,5 +51,5 @@ appbuilder = AppBuilder(
 
 
 #IMPORT ADDITIONAL MODULES HERE!#
-from app.upload.models import files
-from app.upload.views import files
+from app import upload
+#from app import merge
