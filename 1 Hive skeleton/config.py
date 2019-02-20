@@ -20,7 +20,7 @@ CSRF_ENABLED = True
 APP_NAME = "HIVE"
 
 # Uncomment to setup Setup an App icon
-APP_ICON = "static/img/web.png"
+APP_ICON = "static\img\web.png"
 APP_ICON_WIDTH = 290
 
 #----------------------------------------------------
@@ -107,6 +107,5 @@ APP_THEME = "cyborg.css"
 #APP_THEME = "yeti.css"
 
 """ MODIFICATIONS"""
-
-
-
+#Download folder
+DOWNLOAD_FOLDER = os.path.dirname(os.path.abspath(__file__)) + '/downloads/'
